@@ -19,6 +19,7 @@ pipeline{
         stage('Copy artifacts'){
             steps{
                 copyArtifacts filter: '*.txt', fingerprintArtifacts: true, projectName: 'ListOldJobs', selector: lastCompleted(), target: '${WORKSPACE}'
+                archiveArtifacts artifacts: '*.txt', followSymlinks: false
             }
             
         }
