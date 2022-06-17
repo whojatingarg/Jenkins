@@ -21,7 +21,12 @@ pipeline{
                 copyArtifacts filter: '*.txt', fingerprintArtifacts: true, projectName: 'ListOldJobs', selector: lastCompleted()
                 //archiveArtifacts artifacts: '*.txt', followSymlinks: false
             }
-            
+        
+        }
+        stage('groovy'){
+            steps{
+                bat 'groovy getjobs.groovy'
+            }
         }
     }
 }
