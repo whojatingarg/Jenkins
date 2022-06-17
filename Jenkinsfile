@@ -10,7 +10,10 @@ pipeline{
             }
         }
         stage('get jobs'){
-            get_job()
+            steps{
+                get_job()
+            }
+            
         }
     }
 }
