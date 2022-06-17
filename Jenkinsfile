@@ -17,7 +17,10 @@ pipeline{
         }
 
         stage('Copy artifacts'){
-            copyArtifacts filter: '*.txt', fingerprintArtifacts: true, projectName: 'ListOldJobs', selector: lastCompleted()
+            steps{
+                copyArtifacts filter: '*.txt', fingerprintArtifacts: true, projectName: 'ListOldJobs', selector: lastCompleted()
+            }
+            
         }
     }
 }
