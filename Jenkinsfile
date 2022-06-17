@@ -1,6 +1,12 @@
 import jenkins.model.*
 import hudson.model.*
 
+// https://mvnrepository.com/artifact/org.jenkins-ci.main/jenkins-core
+@Grapes(
+    @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='1.414')
+)
+
+
 pipeline{
     agent any 
     stages{
