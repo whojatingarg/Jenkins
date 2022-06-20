@@ -1,6 +1,10 @@
 // https://mvnrepository.com/artifact/org.jenkins-ci.main/jenkins-core
-@Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 
+sandbox(false)
+
+@Grapes(
+    @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
+)
 
 
 import jenkins.model.*
