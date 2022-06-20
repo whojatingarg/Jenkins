@@ -5,6 +5,9 @@
 import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
 
 
+import jenkins.model.*
+import hudson.model.*
+
 pipeline{
     agent any 
     stages{
@@ -44,9 +47,6 @@ def getJobs(){
 
 // @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 
-
-import jenkins.model.*
-import hudson.model.*
 
 def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 2
 
