@@ -1,7 +1,5 @@
-
-@Grapes(
-    @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.85')
-)
+@GrabResolver(name='jenkins', root='http://repo.jenkins-ci.org/public/')
+@Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.9')
 
 import jenkins.model.*
 import hudson.model.*
