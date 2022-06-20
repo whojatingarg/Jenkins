@@ -41,9 +41,8 @@ pipeline{
 @NonCPS   
 def getJobs(){
 
-@Grapes(
-    @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
-)
+
+@Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 
 
 import jenkins.model.*
