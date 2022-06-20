@@ -46,9 +46,6 @@ pipeline{
 def getJobs(){
 
 
-import jenkins.model.*
-import hudson.model.*
-
 def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 2
 
 def filename = build.workspace.toString() + "/jobs_lists.txt"
