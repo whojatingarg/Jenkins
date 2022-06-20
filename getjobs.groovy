@@ -6,7 +6,8 @@
 //     @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 // )
 
-package org.jenkins-ci.main;
+package org.jenkins-ci.main
+;
 import jenkins.model.*;
 import hudson.model.*;
 
