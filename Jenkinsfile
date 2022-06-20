@@ -12,6 +12,7 @@ pipeline{
         }
         stage('get jobs'){
             steps{
+                bat 'python --version'
                // build propagate: false,job: 'ListOldJobs', parameters: [string(name: 'Days', value: '2'), string(name: 'ID', value: '753704'), string(name: 'NODE', value: 'master')]
             }
         }
