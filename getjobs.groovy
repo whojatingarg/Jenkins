@@ -6,10 +6,6 @@
 //     @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 // )
 
-package org.jenkins-ci.main.jenkins-core;
-import jenkins.model.*;
-import hudson.model.*;
-
 
 //  def myParam = build.buildVariableResolver.resolve("Days")
 
