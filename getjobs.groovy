@@ -1,3 +1,6 @@
+
+@Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.85')
+
 import jenkins.model.*
 import hudson.model.*
 
