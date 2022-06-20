@@ -2,12 +2,13 @@
 // @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.9')
 
 // https://mvnrepository.com/artifact/org.jenkins-ci.main/jenkins-core
-@Grapes(
-    @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
-)
+// @Grapes(
+//     @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
+// )
 
-import jenkins.model.*
-import hudson.model.*
+package org.jenkins-ci.main.*;
+import jenkins.model.*;
+import hudson.model.*;
 
 
 //  def myParam = build.buildVariableResolver.resolve("Days")
