@@ -4,7 +4,7 @@
 //      @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 // )
 
-// import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
+import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
 
 
 
@@ -42,9 +42,8 @@ pipeline{
 }
 
     
-  
+@NonCPS
 def getJobs(){
-
 
 def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 2
 
