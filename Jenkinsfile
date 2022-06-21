@@ -33,9 +33,12 @@ pipeline{
         stage('groovy'){
             steps{
                 script{
-                    getJobs()
+                   Jenkins.instance.getAllItems(Job.class).each { jobitem ->
+                    def jobName = jobitem.name
+                    def jobInfo = Jenkins.instance.getItem(jobName)
+                    println(jobName)
+                   }
                 }
-               
             }
         }
     }
