@@ -11,7 +11,9 @@ pipeline{
     stages{
         stage('py version'){
             steps{
+                deleteDir()
                 bat 'python --version'
+                
             }
         }
         stage('get jobs'){
@@ -31,7 +33,7 @@ pipeline{
         stage('groovy'){
             steps{
                 
-                     getJobs()
+                getJobs()
                 
             }
         }
