@@ -49,7 +49,7 @@ def myParam = "${env.Days}"
 
 println  "+-----------------------+ \n| No of days: " + myParam +"\t\t|\n+-----------------------+"
 
-def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * myParam
+def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * myParam.toInteger()
 
 //def filename = build.workspace.toString() + "/jobs_lists.txt"
 def filename =  "${WORKSPACE}" + "jobs_lists.txt"
