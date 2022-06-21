@@ -4,7 +4,7 @@
 //      @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 // )
 
-import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
+//import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
 
 
 
@@ -41,7 +41,7 @@ pipeline{
 }
 
     
-@NonCPS
+//@NonCPS
 def getJobs(){
 
 //def myParam = build.buildVariableResolver.resolve("Days")
