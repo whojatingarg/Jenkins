@@ -23,13 +23,13 @@ pipeline{
             }
         }
 
-        stage('Copy artifacts'){
-            steps{
-                copyArtifacts filter: '*.txt', fingerprintArtifacts: true, projectName: 'ListOldJobs', selector: lastCompleted()
-                //archiveArtifacts artifacts: '*.txt', followSymlinks: false
-            }
+        // stage('Copy artifacts'){
+        //     steps{
+        //         copyArtifacts filter: '*.txt', fingerprintArtifacts: true, projectName: 'ListOldJobs', selector: lastCompleted()
+        //         //archiveArtifacts artifacts: '*.txt', followSymlinks: false
+        //     }
         
-        }
+        // }
         stage('groovy'){
             steps{
                 
@@ -50,6 +50,7 @@ def myParam = "${env.Days}"
 println  "+-----------------------+ \n| No of days: " + myParam +"\t\t|\n+-----------------------+"
 
 def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * myParam.toInteger()
+
 
 //def filename = build.workspace.toString() + "/jobs_lists.txt"
 def filename =  "${WORKSPACE}" + "jobs_lists.txt"
