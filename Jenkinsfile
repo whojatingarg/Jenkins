@@ -33,11 +33,7 @@ pipeline{
         stage('groovy'){
             steps{
                 script{
-                   Jenkins.instance.getAllItems(Job.class).each { jobitem ->
-                    def jobName = jobitem.name
-                    def jobInfo = Jenkins.instance.getItem(jobName)
-                    println(jobName)
-                   }
+                    getJobs()
                 }
             }
         }
@@ -48,9 +44,14 @@ pipeline{
 @NonCPS
 def getJobs(){
 
+def myParam = build.buildVariableResolver.resolve("Days")
+
+println  "+-----------------------+ \n| No of days: " + myParam +"\t\t|\n+-----------------------+"
+
 def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 2
 
-def filename = build.workspace.toString() + "/jobs_lists.txt"
+// def filename = build.workspace.toString() + "/jobs_lists.txt"
+def filename = "jobs_lists.txt"
 targetFile = new File(filename).write("")
 targetFile = new File(filename).append("<table><tr><th>Job Name</th><th>Last Build on</th><th>Keep</th><th>username</th></tr>")
 println "Cut of Date: " + cutOfDate
