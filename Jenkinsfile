@@ -44,7 +44,9 @@ pipeline{
 @NonCPS
 def getJobs(){
 
-def myParam = build.buildVariableResolver.resolve("Days")
+//def myParam = build.buildVariableResolver.resolve("Days")
+
+def myParam = ${env.Days}
 
 println  "+-----------------------+ \n| No of days: " + myParam +"\t\t|\n+-----------------------+"
 
