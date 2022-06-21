@@ -52,8 +52,8 @@ println  "+-----------------------+ \n| No of days: " + myParam +"\t\t|\n+------
 
 def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 2
 
-// def filename = build.workspace.toString() + "/jobs_lists.txt"
-def filename = "jobs_lists.txt"
+def filename = build.workspace.toString() + "/jobs_lists.txt"
+//def filename = "jobs_lists.txt"
 targetFile = new File(filename).write("")
 targetFile = new File(filename).append("<table><tr><th>Job Name</th><th>Last Build on</th><th>Keep</th><th>username</th></tr>")
 println "Cut of Date: " + cutOfDate
