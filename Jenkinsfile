@@ -55,7 +55,7 @@ def cutOfDate = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * myParam.toIn
 
 
 //def filename = build.workspace.toString() + "/jobs_lists.txt"
-def filename =  "$WORKSPACE" + "jobs_lists.txt"
+def filename =  "$WORKSPACE" + "/jobs_lists.txt"
 print(filename)
 def targetFile = new File(filename).write("")
 targetFile = new File(filename).append("<table><tr><th>Job Name</th><th>Last Build on</th><th>Keep</th><th>username</th></tr>")
