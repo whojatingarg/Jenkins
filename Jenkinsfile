@@ -38,8 +38,7 @@ pipeline{
     }
 }
 
-    
-@NonCPS
+
 def getJobs(){
 
 //def myParam = build.buildVariableResolver.resolve("Days")
@@ -56,7 +55,7 @@ targetFile = new File(filename).write("")
 targetFile = new File(filename).append("<table><tr><th>Job Name</th><th>Last Build on</th><th>Keep</th><th>username</th></tr>")
 println "Cut of Date: " + cutOfDate
 for (job in Jenkins.instance.getAllItems(Job.class)) {
-build = job.getLastBuild()
+def build = job.getLastBuild()
 if (build != null && build.getTimeInMillis() < cutOfDate) {
 if (!job.getFullName().contains("MyAxis"))
 if (!job.getFullName().contains("/"))
