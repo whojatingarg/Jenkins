@@ -33,7 +33,10 @@ pipeline{
         stage('groovy'){
             steps{
                 script{
+                    
+ansiColor('xterm') {
                     getJobs()
+}
                 }
                 
             }
@@ -42,7 +45,7 @@ pipeline{
 }
 
 
-@NonCPS
+
 def getJobs(){
 
 //def myParam = build.buildVariableResolver.resolve("Days")
@@ -64,11 +67,9 @@ if (build != null && build.getTimeInMillis() < cutOfDate) {
 if (!job.getFullName().contains("MyAxis"))
 if (!job.getFullName().contains("/"))
 
-ansiColor('xterm') {
         // Just some echoes to show the ANSI color.
     println job.getFullName() + " \033[31m Last build ona: \033[0m" + build.getTime().format("YYYY-MMM-dd HH:mm:ss") + "\n------------------------------------"
 
-}
 targetFile = new File(filename).append("<tr><td>"+job.getFullName() + "</td>" + "<td>"+ "Last build on: " + build.getTime().format("YYYY-MMM-dd HH:mm:ss") + "</td> <td></td><td></td></tr>"+ "\n")
 }
 }
