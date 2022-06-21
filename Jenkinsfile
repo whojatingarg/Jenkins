@@ -32,8 +32,9 @@ pipeline{
         // }
         stage('groovy'){
             steps{
-                
-                getJobs()
+                script{
+                    getJobs()
+                }
                 
             }
         }
