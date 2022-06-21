@@ -4,9 +4,7 @@
 //      @Grab(group='org.jenkins-ci.main', module='jenkins-core', version='2.355')
 // )
 
-//import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
-
-
+import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
 
 pipeline{
     agent any 
@@ -32,9 +30,9 @@ pipeline{
         }
         stage('groovy'){
             steps{
-                script{
-                    getJobs()
-                }
+                
+                     getJobs()
+                
             }
         }
     }
@@ -58,7 +56,7 @@ targetFile = new File(filename).write("")
 targetFile = new File(filename).append("<table><tr><th>Job Name</th><th>Last Build on</th><th>Keep</th><th>username</th></tr>")
 println "Cut of Date: " + cutOfDate
 for (job in Jenkins.instance.getAllItems(Job.class)) {
-build = job.getLastBuild()
+def build = job.getLastBuild()
 if (build != null && build.getTimeInMillis() < cutOfDate) {
 if (!job.getFullName().contains("MyAxis"))
 if (!job.getFullName().contains("/"))
