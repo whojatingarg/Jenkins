@@ -41,7 +41,7 @@ pipeline{
 }
 
     
-//@NonCPS
+@NonCPS
 def getJobs(){
 
 //def myParam = build.buildVariableResolver.resolve("Days")
